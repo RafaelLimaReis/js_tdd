@@ -1,0 +1,17 @@
+{
+  "name": "js_tdd",
+  "version": "1.0.0",
+  "description": "files created in classes of course 'js com tdd'",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Lima <rafaellimareis01@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "6.2.2",
+    "husky": "3.0.4"
+  }
+}

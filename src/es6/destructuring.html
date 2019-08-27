@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Destructuring</title>
+</head>
+<body>
+  <script>
+    var data = {
+      'name': 'Rafael',
+      'surname': 'LIma',
+      'age': 22,
+      'social': {
+        'facebook': '/faellimareis'
+      }
+    }
+
+    /* antigo */
+    const name = data.name;
+    const facebook = data.social.facebook;
+
+    /* novo */
+    const {name2, facebook2} = data;
+
+    console.log(name);
+    console.log(facebook2);
+
+    /* nomeando variavel */
+    const { facebook:fb } = data;
+    /* valor default */
+    const { city = 'Franca' } = data;
+  </script>
+</body>
+</html>

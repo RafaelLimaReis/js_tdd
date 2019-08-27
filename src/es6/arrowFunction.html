@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>arrow function</title>
+</head>
+<body>
+  <script>
+    const ireland = ['Dublin', 'Galway', 'Cork'];
+
+    /* antigo */
+    const love = ireland.map(function(name) {
+      return `I love ${name}`;
+    });
+
+    /* novo */
+    const loveArrow = ireland.map(name => {
+      return `I love ${name}`;
+    });
+
+    /* simplificado */
+    const oneLine = ireland.map(name => `I love ${name}`);
+  </script>
+</body>
+</html>

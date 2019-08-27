@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    /* para dados asincronos => não espera resposta para continuar */
+    var defer = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (true) {
+          resolve('hello! it works!');
+        } else {
+          reject('error');
+        }
+      }, 2000);
+
+    });
+
+    /* then => sucesso na requisição, catch => erro na requisição */
+    defer.then((data) => {
+      console.log(data);
+      return 'foo';
+    }).then(data => {
+      console.log(data);
+    }).catch(e => console.log(e));
+
+    /**********************************************************************/
+    /* multiplas promises */
+    const currency = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({currency: 'euro', value: 4.50});
+      }, 2000);
+    });
+
+    const contries = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(['Ireland', 'England', 'Scotland']);
+      }, 600);
+    });
+
+    /*
+    * all => só resolve quando todas estiverem prontas
+    * race => resolve só a primeira
+    */
+    Promise.all([currency, contries]).then(data => {
+      console.log(data);
+    });
+
+    Promise.race([currency, contries]).then(data => {
+      console.log(data);
+    });
+
+  </script>
+</body>
+</html>

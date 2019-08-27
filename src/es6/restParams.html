@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rest params</title>
+</head>
+<body>
+  <script>
+    /* antigo */
+    function multiply(mult, arg1, arg2, arg3) {
+      let arr = [];
+      arr.push(mult * arg1);
+      arr.push(mult * arg2);
+      arr.push(mult * arg3);
+      return arr;
+    }
+
+    console.log(multiply(2,1,2,3));
+
+    /* novo (...args => infinitos parametros) */
+    function multiplyNew(mult, ...args) {
+      return args.map(arg => arg * mult);
+    }
+    console.log(multiplyNew(2,1,3,4,2,4,5));
+  </script>
+</body>
+</html>

@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --colors --progress",
-    "watch": "npm run build -- --watch"
+    "build:prod": "./node_modules/.bin/webpack --colors --progress -p",
+    "watch": "npm run build -- --watch",
+    "watch:prod": "npm run build -- --watch -p",
+    "server": "./node_modules/.bin/webpack-dev-server --inline --open"
   },
   "author": "Rafael Lima <rafaellimareis01@gmail.com>",
   "license": "MIT",
@@ -15,6 +18,7 @@
     "babel-loader": "^8.0.6",
     "ramda": "^0.26.1",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   }
 }

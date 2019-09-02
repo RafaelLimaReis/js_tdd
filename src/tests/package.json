@@ -1,0 +1,24 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha src/tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "npm test -- --progress --bail --watch"
+  },
+  "author": "Rafael Lima <rafaellimareis01@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/register": "7.5.5",
+    "chai": "4.2.0",
+    "eslint": "6.2.2",
+    "husky": "3.0.4",
+    "mocha": "6.2.0",
+    "nyc": "14.1.1"
+  }
+}
